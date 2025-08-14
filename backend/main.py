@@ -20,14 +20,8 @@ from fastapi.staticfiles import StaticFiles
 # ----------------------------
 # 0. API Keys (PUT YOUR KEYS HERE)
 # ----------------------------
-PEXELS_API_KEY = os.getenv(
-    "PEXELS_API_KEY",
-    "PksDsmX5YzBv6WIZOuqw4Oy6YhgGg0F3k0g7YPeQVuCWqLN3hsPTO96S"
-)
-NVIDIA_API_KEY = os.getenv(
-    "NVIDIA_API_KEY",
-    "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"
-)
+PEXELS_API_KEY = os.getenv("PEXELS_API_KEY")
+NVIDIA_API_KEY = os.getenv("NVIDIA_API_KEY")
 
 # ----------------------------
 # 1. NVIDIA / OpenAI API Setup
