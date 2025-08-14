@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 240 15% 6%;
+    --foreground: 240 5% 96%;
+
+    --card: 240 12% 8%;
+    --card-foreground: 240 5% 96%;
+
+    --popover: 240 12% 8%;
+    --popover-foreground: 240 5% 96%;
+
+    --primary: 270 70% 60%;
+    --primary-foreground: 240 5% 96%;
+
+    --secondary: 240 8% 14%;
+    --secondary-foreground: 240 5% 84%;
+
+    --muted: 240 8% 12%;
+    --muted-foreground: 240 5% 64%;
+
+    --accent: 280 80% 65%;
+    --accent-foreground: 240 5% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 240 5% 96%;
+
+    --border: 240 8% 18%;
+    --input: 240 8% 16%;
+    --ring: 270 70% 60%;
+
+    --radius: 0.75rem;
+
+    /* Video Generation Theme */
+    --video-primary: 270 70% 60%;
+    --video-secondary: 280 80% 65%;
+    --video-accent: 310 100% 70%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 70% 60%), hsl(280 80% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 12% 8%), hsl(240 8% 14%));
+    --gradient-accent: linear-gradient(135deg, hsl(280 80% 65%), hsl(310 100% 70%));
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(270 70% 60% / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(240 15% 6% / 0.5);
+
+    --sidebar-background: 240 12% 8%;
+    --sidebar-foreground: 240 5% 84%;
+    --sidebar-primary: 270 70% 60%;
+    --sidebar-primary-foreground: 240 5% 96%;
+    --sidebar-accent: 240 8% 14%;
+    --sidebar-accent-foreground: 240 5% 84%;
+    --sidebar-border: 240 8% 18%;
+    --sidebar-ring: 270 70% 60%;
+  }
+
+  .dark {
+    /* Already in dark mode by default */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden overflow-y-auto;
+    background: linear-gradient(135deg, hsl(240 15% 6%), hsl(240 12% 8%));
+    background-attachment: fixed;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  @keyframes pulse-glow {
+    0% {
+      box-shadow: 0 0 20px hsl(270 70% 60% / 0.3);
+    }
+    100% {
+      box-shadow: 0 0 40px hsl(270 70% 60% / 0.6);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .backdrop-blur-glass {
+    backdrop-filter: blur(12px) saturate(180%);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
