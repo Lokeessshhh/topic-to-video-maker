@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pillow
+moviepy
+gtts
+openai
