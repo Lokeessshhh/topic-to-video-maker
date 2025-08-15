@@ -1,73 +1,159 @@
-# Welcome to your Lovable project
+AI Video Generator Project 🎬🤖
 
-## Project info
+An end-to-end AI-powered video generator that converts AI-generated narrations into fully edited videos. This project uses a GPT 120B model from OpenRouter for narration, Pexels API for video clips, and Lovable.ai for the frontend UI, integrated with a FastAPI backend.
 
-**URL**: https://lovable.dev/projects/07f12b43-a3cb-4994-a2f7-a3ba478976f9
+Features
 
-## How can I edit this code?
+Generate natural language narrations using GPT 120B.
 
-There are several ways of editing your application.
+Download relevant video clips using Pexels API.
 
-**Use Lovable**
+Automatically generate audio narration from text.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/07f12b43-a3cb-4994-a2f7-a3ba478976f9) and start prompting.
+Edit videos: cut clips appropriately, merge them with audio.
 
-Changes made via Lovable will be committed automatically to this repo.
+Interactive and modern UI using Lovable.ai.
 
-**Use your preferred IDE**
+Fully functional backend with FastAPI.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Preview generated videos directly in the UI.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Tech Stack
 
-Follow these steps:
+AI Model: GPT 120B via OpenRouter API
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Video Source: Pexels API
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Frontend: Lovable.ai
 
-# Step 3: Install the necessary dependencies.
-npm i
+Backend: FastAPI (main.py)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Video Processing: FFmpeg or Python video libraries
 
-**Edit a file directly in GitHub**
+Audio Generation: Text-to-Speech (TTS) from narration
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Architecture / Workflow
 
-**Use GitHub Codespaces**
+Text Generation:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+User inputs a topic or narration request in the UI.
 
-## What technologies are used for this project?
+GPT 120B generates detailed narration text via OpenRouter API using your API key.
 
-This project is built with:
+Video Retrieval:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Extract keywords from narration.
 
-## How can I deploy this project?
+Fetch relevant videos from Pexels API.
 
-Simply open [Lovable](https://lovable.dev/projects/07f12b43-a3cb-4994-a2f7-a3ba478976f9) and click on Share -> Publish.
+Audio Generation:
 
-## Can I connect a custom domain to my Lovable project?
+Convert narration text into audio using a TTS engine.
 
-Yes, you can!
+Video Editing:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Automatically cut video clips according to narration timestamps.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Merge clips with generated audio.
+
+Rendering & Preview:
+
+Render final video.
+
+Show output directly in the UI.
+
+Demo
+
+Sample Video Link
+
+Setup & Installation
+
+Clone the repository
+
+git clone https://github.com/yourusername/ai-video-generator.git
+cd ai-video-generator
+
+
+Create virtual environment
+
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+
+
+Install dependencies
+
+pip install -r requirements.txt
+
+
+Setup API keys
+
+Create a .env file and add:
+
+OPENROUTER_API_KEY=your_openrouter_api_key
+PEXELS_API_KEY=your_pexels_api_key
+
+
+Run FastAPI backend
+
+uvicorn main:app --reload
+
+
+Open Frontend UI
+
+Access your Lovable.ai UI and connect it to the backend endpoints.
+
+Usage
+
+Enter a topic or narration prompt in the UI.
+
+Click Generate Video.
+
+The system will:
+
+Generate narration with GPT 120B
+
+Download relevant videos from Pexels
+
+Generate audio narration
+
+Cut and merge video clips
+
+Preview or download the final video.
+
+Folder Structure
+ai-video-generator/
+│
+├─ main.py                 # FastAPI backend
+├─ frontend/               # Lovable.ai frontend files
+├─ videos/                 # Downloaded and edited videos
+├─ audio/                  # Generated audio files
+├─ requirements.txt
+├─ README.md
+└─ .env
+
+APIs Used
+
+OpenRouter GPT 120B: AI text generation
+https://openrouter.ai/
+
+Pexels API: Video downloading
+https://www.pexels.com/api/
+
+Future Improvements
+
+Add custom voice options for TTS.
+
+Support multiple languages.
+
+Add advanced video effects or transitions.
+
+Implement user authentication and saved projects.
+
+License
+
+MIT License © 2025 Your Name
+
+If you want, I can also create a short, visually rich GitHub README with badges, API links, and a cleaner workflow diagram that would look amazing on your repo’s front page. It could include an embedded GIF/video preview and a workflow diagram showing narration → video → merge.
+
+Do you want me to do that next?
