@@ -150,10 +150,4 @@ Add advanced video effects or transitions.
 
 Implement user authentication and saved projects.
 
-License
-
-MIT License © 2025 Your Name
-
-If you want, I can also create a short, visually rich GitHub README with badges, API links, and a cleaner workflow diagram that would look amazing on your repo’s front page. It could include an embedded GIF/video preview and a workflow diagram showing narration → video → merge.
-
 Do you want me to do that next?
