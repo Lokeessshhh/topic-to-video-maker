@@ -308,9 +308,14 @@ def run_video_generation(topic: str):
     build_video(topic, output_filename=output_file, cleanup_temp=True)
 
 @app.post("/generate_video")
-async def generate_video(request: VideoRequest):
+async def generate_video(request: VideoRequest, req: Request):
     output_file = os.path.join("static", "final_video.mp4")
     build_video(request.topic, output_filename=output_file, cleanup_temp=True)
-    video_url = "http://localhost:8000/static/final_video.mp4"
+    
+    # Build URL dynamically
+    base_url = str(req.base_url)  # e.g., http://your-domain.com/
+    video_url = f"{base_url}static/final_video.mp4"
+    
     return {"status": "done", "video_url": video_url}
+
 
