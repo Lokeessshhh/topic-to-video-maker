@@ -1,5 +1,8 @@
 fastapi
 uvicorn
-moviepy
-Pillow
 requests
+moviepy==1.0.3
+Pillow
+gTTS
+openai
+python-dotenv
