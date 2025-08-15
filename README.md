@@ -1,4 +1,4 @@
-AI Video Generator Project 🎬🤖
+*ello*
 
 An end-to-end AI-powered video generator that converts AI-generated narrations into fully edited videos. This project uses a GPT 120B model from OpenRouter for narration, Pexels API for video clips, and Lovable.ai for the frontend UI, integrated with a FastAPI backend.
 
